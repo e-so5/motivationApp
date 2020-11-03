@@ -1,8 +1,64 @@
-#itemList{
-    font-weight: bold;
-    margin-top: 200px;
-    border: 2px solid black;
-    border-radius: 20px;
-    padding: 0 15px;
-    width: 300px;
+/* ためるページ */
+
+#addContentsWrapper{
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 50px;
+    box-sizing: border-box;
 }
+
+#itemList_text{
+    margin-top: 160px;
+    text-align: center;
+}
+
+#itemList{
+    margin-top: 28px;
+}
+
+#registerButton{
+ margin: 20px auto;
+ display: block;
+ text-align: center;
+ width: 200px;
+ border-radius: 20px;
+}
+
+#footer{
+    height: 50px;
+}
+
+#fotterContents{
+    padding: 12px;
+    color: #fff;
+}
+
+#backButton{
+    margin-left: 16px;
+    font-size: 24px;
+}
+
+/* TOPページ */
+#About_top{
+    padding-top: 40px;
+    font-weight: bold;
+    font-size: 24px
+}
+
+#About_add, #About_save{
+    padding-top: 40px;
+}
+
+#addtask{
+    margin:5px;
+}
+
+#AboutButton{
+    margin-top: 280px;
+    display: flex;
+}
+
+#LoginButton{
+    margin-right: 52px;
+}
+
