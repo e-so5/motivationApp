@@ -1,22 +1,22 @@
-{% extends "base.html" %} 
+{% extends 'base.html' %} 
 {% block content %}
 <header>
   <nav>
     <div class="nav-wrapper light-blue accent-1">
-      <a href="#" class="brand-logo center"></a>
+      <a href="#" class="brand-logo center">ためる</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
     </div>
   </nav>
 </header>
-<a class="waves-effect waves-light btn" id ="addtask" >タスクを追加する</a>
+<a class="waves-effect waves-light btn teal lighten-4" id ="addtask" >タスクを追加する</a>
 <table class= "striped">
-  <thead>
+  <!-- <thead>
     <tr class = "#b2dfdb teal lighten-4">
         <th class="center-align">task</th>
         <th class="center-align">get_point</th>
         <th class="center-align">button</th>
     </tr>
-  </thead>
+  </thead> -->
 
   <tbody>
     <!-- for文 -->
@@ -38,4 +38,11 @@
     </tr>
   </tbody>
 </table>
+
+ <!-- フッター -->
+ <footer id="footer" class="teal lighten-4">
+  <div id="fotterContents">
+   <i class="white-text fas fa-step-backward" id="backButton"></i>
+   </div>
+ </footer>
 {% endblock %}
