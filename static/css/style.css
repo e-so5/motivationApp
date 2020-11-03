@@ -41,19 +41,20 @@
 #About_top{
     padding-top: 40px;
     font-weight: bold;
-    font-size: 24px
+    font-size: 24px;
+    text-align: center;
 }
 
-#About_add, #About_save{
+#About_add{
     padding-top: 40px;
 }
 
-#addtask{
-    margin:5px;
+#About_save{
+    padding-top: 160px;
 }
 
 #AboutButton{
-    margin-top: 280px;
+    margin-top: 140px;
     display: flex;
 }
 
@@ -62,10 +63,44 @@
 }
 
 /* Myページ */
-#MyfotterContents{
+
+#info-wrapper{
+    margin-top: 60px;
+}
+
+#UserInfo{
+    width: 180px;
+    text-align: center;
+}
+
+#UserInfo>h2{
+    font-size: 24px;
+    padding-top: 12px;
+    font-weight:bold;
+}
+
+#MyfooterContents{
     display:flex;
     justify-content: space-around;
     font-weight: bold;
     font-size: 24px;
     padding: 12px;
+}
+
+.PointStatus{
+    padding: 120px 20px 0;
+}
+
+.currentPoint{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.PointInfo{
+    font-size: 24px;
+}
+
+.pointCount{
+    margin-top: 24px;
 }
