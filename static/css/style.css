@@ -1,0 +1,8 @@
+#itemList{
+    font-weight: bold;
+    margin-top: 200px;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 0 15px;
+    width: 300px;
+}
