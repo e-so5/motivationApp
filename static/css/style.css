@@ -30,7 +30,6 @@
 
 #fotterContents{
     padding: 12px;
-    color: #fff;
 }
 
 #backButton{
@@ -62,3 +61,11 @@
     margin-right: 52px;
 }
 
+/* Myページ */
+#MyfotterContents{
+    display:flex;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 12px;
+}
