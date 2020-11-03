@@ -1,0 +1,12 @@
+from flask import Flask, render_template, request, redirect, session
+# flaskとは違うモジュール
+import sqlite3
+app = Flask(__name__)
+
+@app.route("/test")
+def debug():
+  return render_template("tasklist.html")
+
+
+if __name__ == "__main__":
+	app.run(debug=True)

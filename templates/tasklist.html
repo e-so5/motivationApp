@@ -1,0 +1,41 @@
+{% extends "base.html" %} 
+{% block content %}
+<header>
+  <nav>
+    <div class="nav-wrapper light-blue accent-1">
+      <a href="#" class="brand-logo center"></a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+    </div>
+  </nav>
+</header>
+<a class="waves-effect waves-light btn" id ="addtask" >タスクを追加する</a>
+<table class= "striped">
+  <thead>
+    <tr class = "#b2dfdb teal lighten-4">
+        <th class="center-align">task</th>
+        <th class="center-align">get_point</th>
+        <th class="center-align">button</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <!-- for文 -->
+		<tr>
+      <td width= "200">30分勉強する</td>
+      <td>30point</td>
+      <td><a class="waves-effect waves-light btn #b2dfdb teal lighten-4" href="">start</a></td>
+    </tr>
+    <tr>
+      <td>これはサンプルです
+      </td>
+      <td>Jellybean</td>
+      <td>$3.76</td>
+    </tr>
+    <tr>
+      <td>これはこれはリストのサンプルです</td>
+      <td>Lollipop</td>
+      <td>$7.00</td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}
