@@ -1,3 +1,111 @@
+<<<<<<< HEAD
+/* ためるページ */
+
+#addContentsWrapper{
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 50px;
+    box-sizing: border-box;
+}
+
+#itemList_text{
+    margin-top: 160px;
+    text-align: center;
+}
+
+#itemList{
+    margin-top: 28px;
+}
+
+#registerButton{
+ margin: 20px auto;
+ display: block;
+ text-align: center;
+ width: 200px;
+ border-radius: 20px;
+}
+
+#footer{
+    height: 50px;
+}
+
+#fotterContents{
+    padding: 12px;
+}
+
+#backButton{
+    margin-left: 16px;
+    font-size: 24px;
+}
+
+/* TOPページ */
+#About_top{
+    padding-top: 40px;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+}
+
+#About_add{
+    padding-top: 40px;
+}
+
+#About_save{
+    padding-top: 160px;
+}
+
+#AboutButton{
+    margin-top: 140px;
+    display: flex;
+}
+
+#LoginButton{
+    margin-right: 52px;
+}
+
+/* Myページ */
+
+#info-wrapper{
+    margin-top: 60px;
+}
+
+#UserInfo{
+    width: 180px;
+    text-align: center;
+}
+
+#UserInfo>h2{
+    font-size: 24px;
+    padding-top: 12px;
+    font-weight:bold;
+}
+
+#MyfooterContents{
+    display:flex;
+    justify-content: space-around;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 12px;
+}
+
+.PointStatus{
+    padding: 120px 20px 0;
+}
+
+.currentPoint{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.PointInfo{
+    font-size: 24px;
+}
+
+.pointCount{
+    margin-top: 24px;
+=======
 #addtask{
   margin: 5px;
+>>>>>>> e7b6775c6bd396b100400a0ca6ceb432f71b059e
 }
