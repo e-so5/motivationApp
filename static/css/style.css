@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /* ためるページ */
 
 #addContentsWrapper{
@@ -104,8 +104,62 @@
 
 .pointCount{
     margin-top: 24px;
-=======
+}
+
 #addtask{
   margin: 5px;
->>>>>>> e7b6775c6bd396b100400a0ca6ceb432f71b059e
+}
+
+
+/* イベントページ */
+
+.eventWrapper{
+    text-align: center;
+
+}
+.eventInfo{
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center; 
+    margin: 40px auto;
+}
+
+.eventInfo>p{
+    padding-top: 24px;
+    font-size: 16px;
+}
+
+.eventImg{
+    padding: 36px 0;
+}
+
+.diceImg{
+    width: 100px;
+    height: 100px;
+    margin-top: 36px;
+}
+
+.dice{
+    margin-top: 28px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* レベルアップページ */
+.levelUpImg{
+    width: 260px;
+    height: auto;
+}
+
+.congMessage{
+    font-size: 28px;
+    padding: 56px;
+    text-align: center;
+}
+
+.congMessage>p{
+    font-size: 16px;
+    margin-top: 24px;
+    margin-bottom: 24px;
 }
