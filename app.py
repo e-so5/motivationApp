@@ -7,6 +7,9 @@ app = Flask(__name__)
 def debug():
   return render_template("tasklist.html")
 
+@app.route("/resultwin")
+def debug2():
+  return render_template("/resultwin.html")
 
 if __name__ == "__main__":
 	app.run(debug=True)
