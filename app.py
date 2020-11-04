@@ -5,7 +5,11 @@ app = Flask(__name__)
 
 @app.route("/test")
 def debug():
-  return render_template("tasklist.html")
+  return render_template("/tasklist.html")
+
+@app.route("/test3")
+def debug3():
+  return render_template("/uselist.html")
 
 @app.route("/resultwin")
 def debug2():
