@@ -19,7 +19,7 @@ hr {
 
 
 /* ログインページ */
-.login_field {
+th.login_field {
     width: 250px;
     text-align: center;
     padding: 8px;
@@ -40,14 +40,11 @@ td.login_field {
 td.login_button {
     text-align: center;
     padding: 100px;
+
+
+
+
 }
-
-#textField{
-    padding: 24px;
-}
-
-
-
 
 input.button2 {
     font-size: 1.4em;
