@@ -4,7 +4,6 @@ h1 {
     margin: 0px;
     padding: 0px;
     color: white;
-
     background-color: #80d8ff;
 
 }
@@ -19,7 +18,7 @@ hr {
 
 
 /* ログインページ */
-th.login_field {
+.login_field {
     width: 250px;
     text-align: center;
     padding: 8px;
@@ -40,11 +39,14 @@ td.login_field {
 td.login_button {
     text-align: center;
     padding: 100px;
-
-
-
-
 }
+
+#textField{
+    padding: 24px;
+}
+
+
+
 
 input.button2 {
     font-size: 1.4em;
