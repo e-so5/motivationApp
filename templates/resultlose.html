@@ -15,19 +15,29 @@
     />
     <link rel="stylesheet" href="../static/css/style.css" />
     <link rel="stylesheet" href="../static/css/reset.css" />
-    <script
-      src="https://kit.fontawesome.com/63c052cb4e.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/63c052cb4e.js"
+      crossorigin="anonymous"></script>
     <script type="text/javascript" src="../static/js/footerFixed.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
   </head>
 
   <body>
     <!-- ここからキリトリ -->
-    {% block content %}{% endblock %}
-    <!-- ここまでキリトリ -->
+    <div class="#80d8ff light-blue accent-1 center-align">
+      <h1>結果発表</h1>
+      <img  class="responsive-img" id= "block" src="../static/img/saikoro-illust1.png" alt="サイコロの写真">
+      <h2 class = "panda">残念...</h2>
+      <h2>＋15ポイント</h2>
+    </div>
+    <footer class="page-footer #b2dfdb teal lighten-4">     
+        <div class="container">
+          <div class="center-align">
+            <a href="#"><i class="medium material-icons
+              ">home</i></a>
+          </div>
+        </div>
+      </footer>
 
     <footer></footer>
     <!-- Compiled and minified CSS -->
@@ -40,3 +50,4 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
+
