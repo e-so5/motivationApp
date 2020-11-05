@@ -5,7 +5,7 @@ h1 {
     padding: 0px;
     color: white;
 
-    background-color: #80d8ff;
+    background-color: #00acc1;
 
 }
 
@@ -50,7 +50,7 @@ input.button2 {
     font-size: 1.4em;
     font-weight: bold;
     padding: 10px 30px;
-    background-color: #80d8ff;
+    background-color: #00acc1;
     color: white;
     border-style: none;
     box-shadow: 2px 2px 3px 1px #666;
