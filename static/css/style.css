@@ -142,6 +142,37 @@
     flex-wrap: wrap;
 }
 
+/* ダイスホバー時に暗くなる */
+#dice_1:hover img{
+    opacity: 0.6;
+    transition-duration: 0.3s;
+}
+
+#dice_2:hover img{
+    opacity: 0.6;
+    transition-duration: 0.3s;
+}
+
+#dice_3:hover img{
+    opacity: 0.6;
+    transition-duration: 0.3s;
+}
+
+#dice_4:hover img{
+    opacity: 0.6;
+    transition-duration: 0.3s;
+}
+
+#dice_5:hover img{
+    opacity: 0.6;
+    transition-duration: 0.3s;
+}
+
+#dice_6:hover img{
+    opacity: 0.6;
+    transition-duration: 0.3s;
+}
+
 /* レベルアップページ */
 .levelUpImg{
     width: 260px;
