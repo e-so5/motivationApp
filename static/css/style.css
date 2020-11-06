@@ -29,6 +29,21 @@
     height: 50px;
 }
 
+/* 貯めるページのフッター */
+#footertask{
+    height: 94px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 500;
+}
+
+#addbutton{
+    height: 36px;
+    background-color: #fff;
+    
+}
+
 #fotterContents {
     padding: 12px;
 }
@@ -110,11 +125,14 @@ body {
     padding-top: 56px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    min-height: 100vh;
 }
 
 main {
     min-height: 100vh;
     flex: 1 0 auto;
+    padding-bottom: 94px;
 }
 
 
