@@ -16,7 +16,7 @@ app.secret_key = "panda"
 # def debug2():
 #   return render_template("/resultwin.html")
 
-@app.route("/list")
+@app.route("/tasklist")
 def task_list():
 	if "user_id" in session:
 		py_user_id = session["user_id"][0]
@@ -25,10 +25,26 @@ def task_list():
 		c.execute("select task,point from tasktable where user_id = ?",(py_user_id,))
 		task_list = []
 		for row in c.fetchall():
-			task_list.append({"task":row[0],"point":row[1]})
+			task_list.append({"task":row[1],"point":row[2]})
 		c.close()
 		print(task_list)
 		return render_template("tasklist.html",html_task_list = task_list)
+	else:
+		return redirect("/login")
+
+@app.route("/uselist")
+def task_list():
+	if "user_id" in session:
+		py_user_id = session["user_id"][0]
+		conn = sqlite3.connect("flasktest.db")
+		c=conn.cursor()
+		c.execute("select item, point from usertable where user_id = ?",(py_user_id,))
+		item_list = []
+		for row in c.fetchall():
+			item_list.append({"item":row[1],"point":row[2]})
+		c.close()
+		print(item_list)
+		return render_template("uselist.html",html_item_list = item_list)
 	else:
 		return redirect("/login")
 
