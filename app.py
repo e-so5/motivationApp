@@ -291,6 +291,28 @@ def task_list():
         return redirect("/login")
 
 
+# task追加のget通信
+	@app.route("/addtask")
+	def add_get():
+		if "user_id" in session:
+		return render_template("addpage.html")
+	else:
+			return redirect("/login")
+
+# task追加のpost通信
+	@app.route("/addtask",methods=["POST"])
+	def add_post():
+		user_id = session["user_id"][0]
+		add_task = request.form.get("task")
+		add_point = request.form.get("point")
+		conn = sqlite3.connect("flasktest.db")
+		c = conn.cursor()
+		c.execute("INSERT INTO tasktable VALUES(null,?,?,?)",(add_task, add_point,   user_id))
+		conn.commit()
+		c.close()
+		return redirect("/list")
+
+# uselistの作成
 @app.route("/uselist")
 def uselist():
     if "user_id" in session:
@@ -313,6 +335,27 @@ def uselist():
 def usepage():
     return render_template("/usepage.html")
 
+
+# uselit追加のget通信
+	@app.route("/adduselist")
+	def add_get():
+		if "user_id" in session:
+		return render_template("usepage.html")
+	else:
+			return redirect("/login")
+
+# uselist追加のpost通信
+	@app.route("/adduselist",methods=["POST"])
+	def add_post():
+		user_id = session["user_id"][0]
+		add_item = request.form.get("item")
+		add_point = request.form.get("point")
+		conn = sqlite3.connect("flasktest.db")
+		c = conn.cursor()
+		c.execute("INSERT INTO tasktable VALUES(null,?,?,?)",(add_item, add_point,   user_id))
+		conn.commit()
+		c.close()
+		return redirect("/list")
 
 if __name__ == "__main__":
     app.run()
