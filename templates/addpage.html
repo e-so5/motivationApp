@@ -8,52 +8,69 @@
       name="description"
       content="ゲーミフィケーションを利用してモチベーションを維持する新しいモチベーションアップアプリです。"
     />
-    
+    <link rel="icon" href="../static/img/favicon.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link rel="stylesheet" href="../static/css/style.css" />
     <link rel="stylesheet" href="../static/css/reset.css" />
-    <script src="https://kit.fontawesome.com/63c052cb4e.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/63c052cb4e.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="text/javascript" src="../static/js/footerFixed.js"></script>
   </head>
+
   <body>
+    <div id="addContentsWrapper">
+      <header>
+        <nav>
+          <div class="nav-wrapper light-blue accent-1">
+            <a href="#" class="brand-logo center">ためる</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+          </div>
+        </nav>
+      </header>
 
-  <div id="addContentsWrapper">
+      <div class="itemList container">
+        <div id="itemList_text">
+          <p>タスクとポイントを入力してください</p>
 
-  <header>
-    <nav>
-      <div class="nav-wrapper light-blue accent-1">
-        <a href="#" class="brand-logo center">ためる</a>
-        <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+          <!-- タスク入力フォーム -->
+          <input
+            type="text"
+            id="itemList"
+            name="in01"
+            size="15"
+            maxlength="40"
+            placeholder="タスクを入力"
+          />
+          <input
+            type="text"
+            id="addpoint"
+            name="in01"
+            size="15"
+            maxlength="40"
+            placeholder="ポイントを入力"
+          />
+          <!-- 登録ボタン -->
+          <a
+            id="registerButton"
+            class="waves-effect waves-light btn-large deep-orange lighten-4"
+            >登録</a
+          >
+        </div>
       </div>
-    </nav>
-  </header>
 
-  
-  <div class="itemList container">
-  <div id="itemList_text">
-    <p>タスクとポイントを入力してください
-    </p>
+      <!-- フッター -->
+      <footer id="footer" class="teal lighten-4">
+        <div id="footerContents">
+          <i class="white-text fas fa-step-backward" id="backButton"></i>
+        </div>
+      </footer>
 
-    <!-- 　タスク入力フォーム -->
-    <form action="/addtask" method="post">
-      <input type="text" id="itemList" name="task" size="15" maxlength="40" placeholder="タスクを入力">
-      <input type="text" id="addpoint" name="point" size="15" maxlength="40" placeholder="ポイントを入力">
-      <!-- 登録ボタン -->
-      <a id="registerButton" class="waves-effect waves-light btn-large deep-orange lighten-4">登録</a>
-    </form>
-  </div> 
-</div>
-
-  <!-- フッター -->
-  <footer id="footer" class="teal lighten-4">
-   <div id="fotterContents">
-    <i class="white-text fas fa-step-backward" id="backButton"></i>
     </div>
-  </footer>
-
-　<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
