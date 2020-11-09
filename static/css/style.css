@@ -1,61 +1,76 @@
 
 /* ためるページ */
 
-#addContentsWrapper{
+#addContentsWrapper {
     min-height: 100vh;
     position: relative;
     padding-bottom: 50px;
     box-sizing: border-box;
 }
 
-#itemList_text{
+#itemList_text {
     margin-top: 160px;
     text-align: center;
 }
 
-#itemList{
+#itemList {
     margin-top: 28px;
 }
 
-#registerButton{
- margin: 20px auto;
- display: block;
- text-align: center;
- width: 200px;
- border-radius: 20px;
+#registerButton {
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    width: 200px;
+    border-radius: 20px;
 }
 
-#footer{
+#footer {
     height: 50px;
 }
 
-#footerContents{
+/* 貯めるページのフッター */
+#footertask{
+    height: 94px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 500;
+}
+
+#addbutton{
+    height: 36px;
+    background-color: #fff;
+    
+}
+
+#fotterContents {
     padding: 12px;
     float: left;
     margin-left: 24px;
 }
 
-#backButton{
+#backButton {
     font-size: 24px;
 }
 
 /* TOPページ */
-#About_top{
+#About_top {
     padding-top: 40px;
     font-weight: bold;
     font-size: 24px;
     text-align: center;
 }
 
-#About_add{
+#About_add {
     padding-top: 40px;
 }
 
-#About_save{
+#About_save {
     padding-top: 160px;
 }
 
-#AboutButton{
+#AboutButton {
     margin-top: 140px;
 }
 
@@ -76,6 +91,7 @@
     margin-top: 60px;
     color: #082B48;
 }
+
 
 #UserInfo{
     text-align: center;
@@ -99,14 +115,14 @@
     display: block;
 }
 
-#UserInfo>h2{
+#UserInfo>h2 {
     font-size: 24px;
     padding-top: 12px;
-    font-weight:bold;
+    font-weight: bold;
 }
 
-#MyFooterContents{
-    display:flex;
+#MyfooterContents {
+    display: flex;
     justify-content: space-around;
     font-weight: bold;
     font-size: 24px;
@@ -131,20 +147,72 @@
     padding: 120px 20px 0;
 }
 
-.currentPoint{
+.currentPoint {
     font-size: 36px;
     font-weight: bold;
     text-align: center;
 }
 
-.PointInfo{
+.PointInfo {
     font-size: 24px;
 }
 
-.pointCount{
+.pointCount {
     margin-top: 24px;
 }
 
+/* ここから要見直し
+body {
+    padding-top: 56px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+}
+
+main {
+    min-height: 100vh;
+    flex: 1 0 auto;
+    padding-bottom: 94px;
+}
+
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+}
+*/
+
+#tasklist{
+    
+}
+
+.list{
+    width: 60%;
+}
+
+/* resultloseのcss */
+#block{
+    height: 300px;
+}
+
+
+
+
+/* footer{
+    z-index: 500;
+    width: 100%;
+    
+    
+    padding: 30px 0; 
+
+    position: absolute;/*←絶対位置*/
+    /* bottom: 0; 下に固定 */
+    /* left: 0;  */
 
 /* イベントページ */
 

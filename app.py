@@ -5,7 +5,7 @@ import random
 
 # appにFlaskを定義して使えるようにする
 app = Flask(__name__)
-
+app.secret_key = "panda"
 
 @app.route('/')
 def index():
@@ -199,17 +199,6 @@ def pointNormal():
     else:
         return redirect("/MyPage")
 
-
-@ app.route("/uselist")
-def debug3():
-    return render_template("/uselist.html")
-
-
-@ app.route("/tasklist")
-def tasklist():
-    return render_template("/tasklist.html")
-
-
 @ app.route("/resultwin")
 def resultwin():
     user_id = 1
@@ -281,6 +270,37 @@ def mistake403(code):
 def notfound404(code):
     return render_template("/new_404.html")
 
+@app.route("/tasklist")
+def task_list():
+	if "user_id" in session:
+		py_user_id = session["user_id"][0]
+		conn = sqlite3.connect("flasktest.db")
+		c=conn.cursor()
+		c.execute("select task,point from tasktable where user_id = ?",(py_user_id,))
+		task_list = []
+		for row in c.fetchall():
+			task_list.append({"task":row[1],"point":row[2]})
+		c.close()
+		print(task_list)
+		return render_template("tasklist.html",html_task_list = task_list)
+	else:
+		return redirect("/login")
+
+@app.route("/uselist")
+def task_list():
+	if "user_id" in session:
+		py_user_id = session["user_id"][0]
+		conn = sqlite3.connect("flasktest.db")
+		c=conn.cursor()
+		c.execute("select item, point from usertable where user_id = ?",(py_user_id,))
+		item_list = []
+		for row in c.fetchall():
+			item_list.append({"item":row[1],"point":row[2]})
+		c.close()
+		print(item_list)
+		return render_template("uselist.html",html_item_list = item_list)
+	else:
+		return redirect("/login")
 
 if __name__ == "__main__":
     app.run()
