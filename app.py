@@ -274,7 +274,7 @@ def notfound404(code):
 def task_list():
 	if "user_id" in session:
 		py_user_id = session["user_id"][0]
-		conn = sqlite3.connect("flasktest.db")
+		conn = sqlite3.connect("app.db")
 		c=conn.cursor()
 		c.execute("select task,point from tasktable where user_id = ?",(py_user_id,))
 		task_list = []
@@ -300,7 +300,7 @@ def task_list():
 		user_id = session["user_id"][0]
 		add_task = request.form.get("task")
 		add_point = request.form.get("point")
-		conn = sqlite3.connect("flasktest.db")
+		conn = sqlite3.connect("app.db")
 		c = conn.cursor()
 		c.execute("INSERT INTO tasktable VALUES(null,?,?,?)",(add_task, add_point,   user_id))
 		conn.commit()
@@ -312,7 +312,7 @@ def task_list():
 def task_list():
 	if "user_id" in session:
 		py_user_id = session["user_id"][0]
-		conn = sqlite3.connect("flasktest.db")
+		conn = sqlite3.connect("app.db")
 		c=conn.cursor()
 		c.execute("select item, point from usertable where user_id = ?",(py_user_id,))
 		item_list = []
@@ -338,7 +338,7 @@ def task_list():
 		user_id = session["user_id"][0]
 		add_item = request.form.get("item")
 		add_point = request.form.get("point")
-		conn = sqlite3.connect("flasktest.db")
+		conn = sqlite3.connect("app.db")
 		c = conn.cursor()
 		c.execute("INSERT INTO tasktable VALUES(null,?,?,?)",(add_item, add_point,   user_id))
 		conn.commit()
