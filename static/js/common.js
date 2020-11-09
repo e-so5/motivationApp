@@ -78,3 +78,5 @@ const grantAccess = () => {
   window.removeEventListener("mousemove", updateKeyPosition);
   keyhole.removeEventListener("mouseover", grantAccess);
 };
+
+
