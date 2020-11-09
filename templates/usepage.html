@@ -34,14 +34,16 @@
   
   <div class="itemList container">
   <div id="itemList_text">
-   <p>やりたいことと<br>消費ポイントを入力してください
-   </p>
+    <p>やりたいことと<br>消費ポイントを入力してください
+    </p>
 
   <!-- 　タスク入力フォーム -->
-    <input type="text" id="itemList" name="in01" size="15" maxlength="40" placeholder="やりたいことを入力">
-    <input type="text" id="addpoint" name="in01" size="15" maxlength="40" placeholder="消費ポイントを入力">
-  <!-- 登録ボタン -->
-　  <a id="registerButton" class="waves-effect waves-light btn-large deep-orange lighten-4">登録</a>
+    <form action="/adduselist" method="post">
+      <input type="text" id="itemList" name="item" size="15" maxlength="40" placeholder="やりたいことを入力">
+      <input type="text" id="addpoint" name="point" size="15" maxlength="40" placeholder="消費ポイントを入力">
+      <!-- 登録ボタン -->
+      <a id="registerButton" class="waves-effect waves-light btn-large deep-orange lighten-4">登録</a>
+    </form>
   </div> 
 </div>
 

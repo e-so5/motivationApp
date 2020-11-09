@@ -34,14 +34,16 @@
   
   <div class="itemList container">
   <div id="itemList_text">
-   <p>タスクとポイントを入力してください
-   </p>
+    <p>タスクとポイントを入力してください
+    </p>
 
-  <!-- 　タスク入力フォーム -->
-    <input type="text" id="itemList" name="in01" size="15" maxlength="40" placeholder="タスクを入力">
-    <input type="text" id="addpoint" name="in01" size="15" maxlength="40" placeholder="ポイントを入力">
-  <!-- 登録ボタン -->
-　  <a id="registerButton" class="waves-effect waves-light btn-large deep-orange lighten-4">登録</a>
+    <!-- 　タスク入力フォーム -->
+    <form action="/addtask" method="post">
+      <input type="text" id="itemList" name="task" size="15" maxlength="40" placeholder="タスクを入力">
+      <input type="text" id="addpoint" name="point" size="15" maxlength="40" placeholder="ポイントを入力">
+      <!-- 登録ボタン -->
+      <a id="registerButton" class="waves-effect waves-light btn-large deep-orange lighten-4">登録</a>
+    </form>
   </div> 
 </div>
 
