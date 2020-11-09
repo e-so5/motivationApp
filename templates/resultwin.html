@@ -8,17 +8,22 @@
       name="description"
       content="ゲーミフィケーションを利用してモチベーションを維持する新しいモチベーションアップアプリです。"
     />
-
+    <link rel="icon" href="../static/img/favicon.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
     <link rel="stylesheet" href="../static/css/style.css" />
     <link rel="stylesheet" href="../static/css/reset.css" />
-    <script src="https://kit.fontawesome.com/63c052cb4e.js"
-      crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/63c052cb4e.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="text/javascript" src="../static/js/footerFixed.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
   </head>
 
@@ -26,19 +31,25 @@
     <!-- ここからキリトリ -->
     <div class="#ffccbc deep-orange lighten-4 center-align">
       <h1>結果発表</h1>
-      <img  class="responsive-img" id= "block" src="../static/img/saikoro-illust1.png" alt="サイコロの写真">
-      <h2 class = "panda">正解!!</h2>
+      <img
+        class="responsive-img"
+        id="block"
+        src="../static/img/saikoro-illust1.png"
+        alt="サイコロの写真"
+      />
+      <h2 class="panda">正解!!</h2>
       <p>ポイントが２倍になります♪</p>
-      <h2>＋30ポイント</h2>
+      <h2>＋{{gotPoint}}ポイント</h2>
     </div>
-    <footer class="page-footer #b2dfdb teal lighten-4">     
-        <div class="container">
-          <div class="center-align">
-            <a href="#"><i class="medium material-icons
-              ">home</i></a>
-          </div>
+    <footer class="page-footer #b2dfdb teal lighten-4">
+      <div class="container">
+        <div class="center-align">
+          <!-- <form action="/pointDouble" method="get" name="double"> -->
+          <a href="/pointDouble"><i class="medium material-icons">home</i></a>
+          <!-- </form> -->
         </div>
-      </footer>
+      </div>
+    </footer>
 
     <footer></footer>
     <!-- Compiled and minified CSS -->
@@ -51,7 +62,3 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
-
-
-    
-
