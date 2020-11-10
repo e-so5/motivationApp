@@ -1,4 +1,5 @@
 {% extends "base.html" %} {% block content %}
+
 <header>
   <nav>
     <div class="nav-wrapper light-blue accent-1">
@@ -12,10 +13,10 @@
   <table id="tasklist" class="striped">
     <tbody>
       <!-- for文 -->
-      { % for item in html_task_list% }
+      {% for item in html_task_list %}
       <tr>
         <td class="list">{{ item['task'] }}</td>
-        <td>{{ item['point'] + "point" }}</td>
+        <td>{{item['point']}}ポイント</td>
         <td>
           <a href="/task_edit"><i class="fas fa-pen-square"></i></a>
         </td>
@@ -23,7 +24,7 @@
         <td>
           <a
             class="waves-effect waves-light btn #d7ccc8 brown lighten-4"
-            href=""
+            href="/event"
             >完了</a
           >
         </td>
@@ -50,4 +51,3 @@
 </footer>
 
 {% endblock %}
-  

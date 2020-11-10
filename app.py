@@ -44,8 +44,7 @@ def game():
 @app.route('/use')
 def use():
     # タスクリストからタスクのidを取ってくる
-    user_id = 1
-    # session['user_id']
+    user_id = session['user_id']
     id = request.args.get("item_id")
     print(id)
     # item_id = int(id)
@@ -82,8 +81,7 @@ def use():
 
 @app.route("/pointDouble")
 def pointDouble():
-    user_id = 1
-    # session['user_id']
+    user_id = session['user_id']
     conn = sqlite3.connect('app.db')
     c = conn.cursor()
 
@@ -145,8 +143,7 @@ def pointDouble():
 
 @app.route("/pointNormal")
 def pointNormal():
-    user_id = 1
-    # session['user_id']
+    user_id = session['user_id']
     conn = sqlite3.connect('app.db')
     c = conn.cursor()
 
@@ -203,8 +200,7 @@ def pointNormal():
 
 @ app.route("/resultwin")
 def resultwin():
-    user_id = 1
-    # session['user_id']
+    user_id = session['user_id']
     conn = sqlite3.connect('app.db')
     c = conn.cursor()
 
@@ -222,10 +218,11 @@ def resultwin():
 
 @ app.route("/MyPage")
 def MyPage():
-    user_id = 1
-    # session['user_id']
+    user_id = session['user_id']
     conn = sqlite3.connect('app.db')
     c = conn.cursor()
+    user_id = user_id[0]
+    print(user_id)
 
     c.execute("SELECT user_name, point FROM user where id = ?", (user_id,))
     user_info = c.fetchone()
@@ -243,8 +240,7 @@ def MyPage():
 
 @ app.route("/resultlose")
 def ResultLose():
-    user_id = 1
-    # session['user_id']
+    user_id = session['user_id']
     conn = sqlite3.connect('app.db')
     c = conn.cursor()
 
@@ -288,7 +284,7 @@ def task_list():
             "select task,point from tasktable where user_id = ?", (py_user_id,))
         task_list = []
         for row in c.fetchall():
-            task_list.append({"task": row[1], "point": row[2]})
+            task_list.append({"task": row[0], "point": row[1]})
         c.close()
         print(task_list)
         return render_template("tasklist.html", html_task_list=task_list)
@@ -296,29 +292,30 @@ def task_list():
         return redirect("/login")
 
 # task追加のget通信
-    @app.route("/addtask")
-    def add_get():
-        if "user_id" in session:
-            return render_template("/addpage.html")
-        else:
-            return redirect("/login")
+
+
+@app.route("/addtask")
+def add_get():
+    if "user_id" in session:
+        return render_template("/addpage.html")
+    else:
+        return redirect("/login")
 
 # task追加のpost通信
-    @app.route("/addtask", methods=["POST"])
-    def add_post():
-        user_id = session["user_id"][0]
-        add_task = request.form.get("task")
-        add_point = request.form.get("point")
-        conn = sqlite3.connect("app.db")
-        c = conn.cursor()
-        c.execute("INSERT INTO tasktable VALUES(null,?,?,?)",(add_task, add_point, user_id))
-        conn.commit()
-        c.close()
-        return redirect("/tasklist")
+@app.route("/addtask", methods=["POST"])
+def add_post():
+    user_id = session["user_id"][0]
+    add_task = request.form.get("task")
+    add_point = request.form.get("point")
+    conn = sqlite3.connect("app.db")
+    c = conn.cursor()
+    c.execute("INSERT INTO tasktable VALUES(null,?,?,?)",
+              (add_task, add_point,   user_id))
+    conn.commit()
+    c.close()
+    return redirect("/tasklist")
 
 # uselistの作成
-
-
 @app.route("/uselist")
 def uselist():
     if "user_id" in session:
@@ -361,20 +358,20 @@ def uselist():
 # タスクリスト編集機能の実装
 @app.route("/edittask/<int:id>")
 def edit(id):
-	if "user_id" in session:
-		conn = sqlite3.connect("app.db")
-		c = conn.cursor()
-		c.execute("select task, point from tasktable where id = ?",(id,))
-		task = c.fetchone()
-		c.close
-		if task is not None:
-			task = task[0]
-		else:
-			return "タスクがありません"
-		item = {"id": id,"task":task}
-		return render_template("edit.html" , task = item)
-	else:
-		return redirect("/login")
+    if "user_id" in session:
+        conn = sqlite3.connect("app.db")
+        c = conn.cursor()
+        c.execute("select task, point from tasktable where id = ?", (id,))
+        task = c.fetchone()
+        c.close
+        if task is not None:
+            task = task[0]
+        else:
+            return "タスクがありません"
+        item = {"id": id, "task": task}
+        return render_template("edit.html", task=item)
+    else:
+        return redirect("/login")
 
 # tasklist編集機能のpost通信
 @app.route("/edittask",methods=["POST"])
@@ -445,49 +442,54 @@ def uselist_del(id):
 		return redirect ("/uselist")
 	else:
 		return redirect("/login")
-# =======
 
 @app.route('/comp')
 def comp_login():
-  return render_template("/comp.html")
-# 
+    return render_template("/comp.html")
+#
+
+
 @app.route('/new_login')
 def new_login_get():
     return render_template('new_login.html')
 
-@app.route('/new_login',methods=["POST"])   
+
+@app.route('/new_login', methods=["POST"])
 def new_login_post():
     name = request.form.get('user_name')
     password = request.form.get('password')
     conn = sqlite3.connect('app.db')
-    c=conn.cursor()
-    c.execute("INSERT INTO user VALUES(null,?,?,0)",(name,password))
+    c = conn.cursor()
+    c.execute("INSERT INTO user VALUES(null,?,?,0)", (name, password))
     conn.commit()
     c.close()
-    return redirect ('/comp')
+    return redirect('/comp')
 
 
 # login
-
-@app.route('/login')
-def login():
-  return render_template('login.html')
-
-@app.route('/login',methods=["POST"])   
+@app.route('/login', methods=["GET", "POST"])
 def login_post():
-  name =request.form.get('user_name')
-  password=request.form.get('password')
-  conn = sqlite3.connect('app.db')
-  c=conn.cursor()
-  c.execute("SELECT id FROM user WHERE user_name = ? AND password = ?",(name,password))
-  py_user_id=c.fetchone()
-  c.close()
-  if py_user_id is not None:
-      session["user_id"]=py_user_id
-      # /new_loginをtopに変える↓
-      return redirect('/new_login')
-  else:
-      return redirect('/login')
+    if request.method == "GET":
+        if 'user_id' in session:
+            return redirect("/MyPage")
+        else:
+            return render_template("login.html")
+    else:
+        name = request.form.get('user_name')
+        password = request.form.get('password')
+        conn = sqlite3.connect('app.db')
+        c = conn.cursor()
+        c.execute(
+            "SELECT id FROM user WHERE user_name = ? AND password = ?", (name, password))
+        py_user_id = c.fetchone()
+        c.close()
+
+        if py_user_id is not None:
+            session["user_id"] = py_user_id
+        # /new_loginをtopに変える↓
+            return redirect('/MyPage')
+        else:
+            return redirect('/login')
 
 
 if __name__ == "__main__":
