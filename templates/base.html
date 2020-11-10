@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SUPER BETTER</title>
     <meta
-      name="description"ｓ
+      name="description"
+      ｓ
       content="ゲーミフィケーションを利用してモチベーションを維持する新しいモチベーションアップアプリです。"
     />
     <link rel="icon" href="../static/img/favicon.png" />
@@ -19,6 +20,16 @@
       src="https://kit.fontawesome.com/63c052cb4e.js"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+      function UseCheck() {
+        var res = confirm("ポイントを使いますか？");
+        if (res == true) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
     <script type="text/javascript" src="./footerFixed.js"></script>
 
     <script type="text/javascript" src="../static/js/footerFixed.js"></script>
@@ -31,7 +42,6 @@
       href="{{ url_for('static', filename='css/style.css') }}"
     />
   </head>
-
 
   <body>
     <!-- ここからキリトリ -->

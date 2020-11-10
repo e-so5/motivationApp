@@ -7,6 +7,7 @@ import random
 app = Flask(__name__)
 app.secret_key = "panda"
 
+
 @app.route('/')
 def index():
     return render_template('/TOP.html')
@@ -199,6 +200,7 @@ def pointNormal():
     else:
         return redirect("/MyPage")
 
+
 @ app.route("/resultwin")
 def resultwin():
     user_id = 1
@@ -269,6 +271,7 @@ def mistake403(code):
 @app.errorhandler(404)
 def notfound404(code):
     return render_template("/new_404.html")
+
 
 @app.route("/tasklist")
 def task_list():
