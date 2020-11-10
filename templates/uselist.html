@@ -16,7 +16,9 @@
       <tr>
         <td class="list">{{ item["item] }}</td>
         <td>{{ item["point"] + "point" }}</td>
-        <td><i class="fas fa-pen-square"></i></td>
+        <td>
+          <a href="/use_edit"><i class="fas fa-pen-square"></i></a>
+        </td>
         <td><i class="far fa-trash-alt"></i></td>
         <td>
           <a
@@ -31,10 +33,15 @@
   </table>
 </div>
 
-<footer id="footertask" class="teal lighten-4 ">
-  <div id = "addbutton" class="right-align">
-    <a href="/adduselist" class="waves-effect waves-light btn #80d8ff light-blue accent-1" id ="addtask" >アイテムの追加</a>
-  </div>    
+<footer id="footertask" class="teal lighten-4">
+  <div id="addbutton" class="right-align">
+    <a
+      href="/adduselist"
+      class="waves-effect waves-light btn #80d8ff light-blue accent-1"
+      id="addtask"
+      >アイテムの追加</a
+    >
+  </div>
 
   <div id="MyfooterContents">
     <i class="white-text fas fa-plus-square"></i>
