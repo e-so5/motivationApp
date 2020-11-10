@@ -15,7 +15,7 @@
            <hr>
            <div align="center">
               <table border="0">
-                  <form action="/login" method="get">
+                  <form action="/login" method="POST">
                       <tr>
                           <th class="login_field">
                               ユーザ名
@@ -24,8 +24,8 @@
                 
                           <td class="login_field">
                               <input 
-                               style="padding: 12px;border-radius: 12px;"   
-                               type="text" name="user_id" value="" size="24">
+                               style="padding: 12px;border-radius: 12px;" #00acc1  
+                               type="text" name="user_name" value="" size="24">
                           </td> 
                         </tr>
                       <tr>
@@ -40,7 +40,7 @@
                       </tr>
                       <tr>
                           <td colspan="2" class="login_button">
-                              <input class="button2" type="submit" value="ログイン">
+                              <input class="button2" type="submit" value="ログイン" name="save">
                           </td>
                       </tr>
                   </form>
