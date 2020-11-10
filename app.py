@@ -348,6 +348,50 @@ def task_list():
 		c.close()
 		return redirect("/list")
 
+# 編集機能の実装
+	@app.route("/edit/<int:id>")
+def edit(id):
+	if "user_id" in session:
+		conn = sqlite3.connect("app.db")
+		c = conn.cursor()
+		c.execute("select task, point from tasktable where id = ?",(id,))
+		task = c.fetchone()
+		c.close
+		if task is not None:
+			task = task[0]
+		else:
+			return "タスクがありません"
+		item = {"id": id,"task":task}
+		return render_template("edit.html" , task = item)
+	else:
+		return redirect("/login")
+
+# tasklist編集機能のpost通信
+@app.route("/edit",methods=["POST"])
+def edit_post():
+	item_id = request.form.get("")
+	item_id = int(item_id) 
+	task = request.form.get("")
+	conn = sqlite3.connect("app.db")
+	c = conn.cursor()
+	c.execute("update task set task = ? where id = ?",(task, item_id))
+	conn.commit()
+	c.close()
+	return redirect("/list")
+
+# tasklistの削除機能の実装
+@app.route("/del/<int:id>")
+def task_del(id):
+	if "user_id" in session:
+		conn = sqlite3.connect("app.db")
+		c = conn.cursor()
+		c.execute("delete from tasktable where id = ?", (id,))
+		conn.commit()
+		c.close()
+		return redirect ("/list")
+	else:
+		return redirect("/login")
+=======
 @app.route('/comp')
 def comp_login():
   return render_template("/comp.html")
@@ -389,23 +433,6 @@ def login_post():
       return redirect('/new_login')
   else:
       return redirect('/login')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 if __name__ == "__main__":

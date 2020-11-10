@@ -16,10 +16,9 @@
     { % for item in html_task_list% }
 		<tr>
       <td class = "list">{{ item['task'] }}</td>
-      <td>{{ point['task'] + "point" }}</td>
+      <td>{{ item['point'] + "point" }}</td>
       <td><i class="fas fa-pen-square"></i></td>
       <td><i class="far fa-trash-alt"></i></td>
-
       <td><a class="waves-effect waves-light btn #d7ccc8 brown lighten-4" href="">完了</a></td>
     </tr>
     {% endfor %}
@@ -37,14 +36,6 @@
     <i class="white-text fas fa-minus-square"></i>
   </div>
 </footer>
-<!-- <footer class="page-footer #ffffff white"> 
-  <div class="container">
-    <div id= "homeid" class="center-align #b2dfdb teal lighten-4">
-      <a href="#"><i class="medium material-icons
-        ">home</i></a>
-      </div>
-    </div>
-  </footer> -->
   {% endblock %}
   
 
