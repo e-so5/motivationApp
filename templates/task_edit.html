@@ -38,28 +38,29 @@
           <p>タスクとポイントを編集してください</p>
 
           <!-- タスク入力フォーム -->
-          <input
+          <form action="/edittask" method="POST">
+            <input
             type="text"
             id="itemList"
             name="in01"
-            size="15"
-            maxlength="40"
-            placeholder="タスクを入力"
-          />
-          <input
-            type="text"
-            id="addpoint"
-            name="in01"
-            size="15"
-            maxlength="40"
-            placeholder="ポイントを入力"
-          />
-          <!-- 登録ボタン -->
-          <a
-            id="registerButton"
-            class="waves-effect waves-light btn-large deep-orange lighten-4"
-            >登録</a
-          >
+              size="15"
+              maxlength="40"
+              placeholder="タスクを入力"
+            />
+            <input
+              type="text"
+              id="addpoint"
+              name="in01"
+              size="15"
+              maxlength="40"
+              placeholder="ポイントを入力"
+            />
+            <!-- 登録ボタン -->
+              <a
+              id="registerButton"
+              class="waves-effect waves-light btn-large deep-orange lighten-4"
+              >登録</a>
+            </form>
         </div>
       </div>
 
