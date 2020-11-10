@@ -8,7 +8,7 @@
       name="description"
       content="ゲーミフィケーションを利用してモチベーションを維持する新しいモチベーションアップアプリです。"
     />
-
+    <link rel="icon" href="../static/img/favicon.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -20,6 +20,8 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src="../static/js/footerFixed.js"></script>
+    <script src="../static/js/common.js"></script>
+    <script src="../static/js/jquery-3.5.1.min.js"></script>
   </head>
 
   <!-- イベント画像 -->
@@ -33,13 +35,43 @@
     </div>
 
     <!-- サイコロイメージ -->
+    <!-- サイコロ1 -->
     <div class="dice">
-      <img class="diceImg" src="../static/img/dice_one_red.png" alt="" />
-      <img class="diceImg" src="../static/img/dice_two.png" alt="" />
-      <img class="diceImg" src="../static/img/dice_three.png" alt="" />
-      <img class="diceImg" src="../static/img/dice_four.png" alt="" />
-      <img class="diceImg" src="../static/img/dice_five.png" alt="" />
-      <img class="diceImg" src="../static/img/dice_six.png" alt="" />
+      <div id="dice_1">
+        <a href="/game">
+          <img class="diceImg" src="../static/img/dice_one_red.png" alt="" />
+        </a>
+      </div>
+      <!-- サイコロ2 -->
+      <div id="dice_2">
+        <a href="/game">
+          <img class="diceImg" src="../static/img/dice_two.png" alt="" />
+        </a>
+      </div>
+      <!-- サイコロ3 -->
+      <div id="dice_3">
+        <a href="/game">
+          <img class="diceImg" src="../static/img/dice_three.png" alt="" />
+        </a>
+      </div>
+      <!-- サイコロ4 -->
+      <div id="dice_4">
+        <a href="/game">
+          <img class="diceImg" src="../static/img/dice_four.png" alt="" />
+        </a>
+      </div>
+      <!-- サイコロ5 -->
+      <div id="dice_5">
+        <a href="/game">
+          <img class="diceImg" src="../static/img/dice_five.png" alt="" />
+        </a>
+      </div>
+      <!-- サイコロ6 -->
+      <div id="dice_6">
+        <a href="/game">
+          <img class="diceImg" src="../static/img/dice_six.png" alt="" />
+        </a>
+      </div>
     </div>
 
     <!-- フッター -->

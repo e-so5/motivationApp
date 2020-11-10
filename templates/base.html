@@ -6,9 +6,10 @@
     <title>SUPER BETTER</title>
     <meta
       name="description"
+      ｓ
       content="ゲーミフィケーションを利用してモチベーションを維持する新しいモチベーションアップアプリです。"
     />
-
+    <link rel="icon" href="../static/img/favicon.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -19,9 +20,27 @@
       src="https://kit.fontawesome.com/63c052cb4e.js"
       crossorigin="anonymous"
     ></script>
+    <script type="text/javascript">
+      function UseCheck() {
+        var res = confirm("ポイントを使いますか？");
+        if (res == true) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+    <script type="text/javascript" src="./footerFixed.js"></script>
+
     <script type="text/javascript" src="../static/js/footerFixed.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
   </head>
 
   <body>

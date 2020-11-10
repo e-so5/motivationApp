@@ -8,7 +8,7 @@
       name="description"
       content="ゲーミフィケーションを利用してモチベーションを維持する新しいモチベーションアップアプリです。"
     />
-
+    <link rel="icon" href="../static/img/favicon.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -21,53 +21,54 @@
     ></script>
     <script type="text/javascript" src="../static/js/footerFixed.js"></script>
   </head>
+
   <body>
-    <header>
-      <nav>
-        <div class="nav-wrapper light-blue accent-1">
-          <a href="#" class="brand-logo center">TOPページ</a>
-          <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+    <div id="addContentsWrapper">
+      <header>
+        <nav>
+          <div class="nav-wrapper light-blue accent-1">
+            <a href="#" class="brand-logo center">TOPページ</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
+          </div>
+        </nav>
+      </header>
+
+      <!-- アプリの使い方説明 -->
+      <div class="About container">
+        <div id="About_top">
+          <h2>チュートリアル</h2>
         </div>
-      </nav>
-    </header>
 
-    <!-- アプリの使い方説明 -->
-    <div class="About container">
-      <div id="About_top">
-        <h2>チュートリアル</h2>
+        <div id="About_add">
+          <p>タスクの追加方法</p>
+        </div>
+
+        <div id="About_save">
+          <p>タスクの使い方</p>
+        </div>
+
+        <!-- ログイン/追加ボタン -->
+        <div id="AboutButton" class="clear">
+          <a
+            id="LoginButton"
+            class="waves-effect waves-light btn-large light-blue accent-1"
+            >ログイン</a
+          >
+          <a
+            id="registerBtn"
+            class="waves-effect waves-light btn-large deep-orange lighten-4"
+            >新規登録</a
+          >
+        </div>
       </div>
 
-      <div id="About_add">
-        <p>タスクの追加方法</p>
-      </div>
-
-      <div id="About_save">
-        <p>タスクの使い方</p>
-      </div>
-
-      <!-- ログイン/追加ボタン -->
-      <div id="AboutButton">
-        　
-        <a
-          id="LoginButton"
-          class="waves-effect waves-light btn-large light-blue accent-1"
-          >ログイン</a
-        >
-        <a
-          id="registerBtn"
-          class="waves-effect waves-light btn-large deep-orange lighten-4"
-          >新規登録</a
-        >
-      </div>
+      <!-- フッター -->
+      <footer id="footer" class="teal lighten-4">
+        <div id="footerContents">
+          <i class="white-text fas fa-step-backward" id="backButton"></i>
+        </div>
+      </footer>
     </div>
-
-    <!-- フッター -->
-    <footer id="footer" class="teal lighten-4">
-      <div id="fotterContents">
-        <i class="white-text fas fa-step-backward" id="backButton"></i>
-      </div>
-    </footer>
-
     　
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>

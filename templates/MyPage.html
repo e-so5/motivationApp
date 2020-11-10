@@ -8,6 +8,7 @@
       name="description"
       content="ゲーミフィケーションを利用してモチベーションを維持する新しいモチベーションアップアプリです。"
     />
+    <link rel="icon" href="../static/img/favicon.png" />
     <style>
       /* CSSアニメーションの設定 */
       .korokoro {
@@ -103,40 +104,41 @@
       <nav>
         <div class="nav-wrapper light-blue accent-1">
           <a href="#" class="brand-logo center">マイページ</a>
-          <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
         </div>
       </nav>
     </header>
 
     <!-- ユーザー情報表示エリア -->
-    <div id="info-wrapper" class="row">
-      <div id="UserInfo" class="col s6">
-        <p id="userNameTitle">Name</p>
-        <h2 id="userName">石田さん</h2>
-        <h2 id="userLevel">LEVEL　3</h2>
+    <div class="container">
+      <div id="user_info_wrapper" class="clear">
+        <div id="UserInfo">
+          <h3 id="userNameTitle">User Info</h3>
+          <h2 id="userName">{{user_name}}さん</h2>
+          <h2 id="userLevel">LEVEL　{{user_level[0]}}</h2>
+        </div>
+        <div id="userImage">
+          <img id="Alice" class="korokoro" src="../static/img/alice2.png" />
+          <script>
+            loopAnimation("Alice", "korokoro", 800);
+          </script>
+        </div>
       </div>
-      <div id="userImage" class="col s6">
-        <img id="Alice" class="korokoro" src="../static/img/alice2.png" />
-        <script>
-          loopAnimation("Alice", "korokoro", 800);
-        </script>
-      </div>
-    </div>
 
-    <!-- ポイント表示エリア -->
-    <div class="PointStatus">
-      <div class="currentPoint">
-        <h3 class="PointInfo">所持ポイント</h3>
-        <h3 class="pointCount brown lighten-4">54ポイント</h3>
+      <!-- ポイント表示エリア -->
+      <div class="PointStatus">
+        <div class="currentPoint">
+          <h3 class="PointInfo">所持ポイント</h3>
+          <h3 class="pointCount brown lighten-4">{{user_point}}ポイント</h3>
+        </div>
       </div>
     </div>
 
     <!-- フッター -->
     <footer id="footer" class="teal lighten-4">
-      <div id="MyfooterContents">
-        <i class="white-text fas fa-plus-square"></i>
-        <i class="white-text fas fa-home"></i>
-        <i class="white-text fas fa-minus-square"></i>
+      <div id="MyFooterContents">
+        <a href="/tasklist"><i class="white-text fas fa-plus-square"></i></a>
+        <a href="/"><i class="white-text fas fa-home"></i></a>
+        <a href="/use"><i class="white-text fas fa-minus-square"></i></a>
       </div>
     </footer>
 
