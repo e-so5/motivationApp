@@ -348,5 +348,92 @@ def task_list():
 		c.close()
 		return redirect("/list")
 
+# 編集機能の実装
+	@app.route("/edit/<int:id>")
+def edit(id):
+	if "user_id" in session:
+		conn = sqlite3.connect("app.db")
+		c = conn.cursor()
+		c.execute("select task, point from tasktable where id = ?",(id,))
+		task = c.fetchone()
+		c.close
+		if task is not None:
+			task = task[0]
+		else:
+			return "タスクがありません"
+		item = {"id": id,"task":task}
+		return render_template("edit.html" , task = item)
+	else:
+		return redirect("/login")
+
+# tasklist編集機能のpost通信
+@app.route("/edit",methods=["POST"])
+def edit_post():
+	item_id = request.form.get("")
+	item_id = int(item_id) 
+	task = request.form.get("")
+	conn = sqlite3.connect("app.db")
+	c = conn.cursor()
+	c.execute("update task set task = ? where id = ?",(task, item_id))
+	conn.commit()
+	c.close()
+	return redirect("/list")
+
+# tasklistの削除機能の実装
+@app.route("/del/<int:id>")
+def task_del(id):
+	if "user_id" in session:
+		conn = sqlite3.connect("app.db")
+		c = conn.cursor()
+		c.execute("delete from tasktable where id = ?", (id,))
+		conn.commit()
+		c.close()
+		return redirect ("/list")
+	else:
+		return redirect("/login")
+=======
+@app.route('/comp')
+def comp_login():
+  return render_template("/comp.html")
+# 
+@app.route('/new_login')
+def new_login_get():
+    return render_template('new_login.html')
+
+@app.route('/new_login',methods=["POST"])   
+def new_login_post():
+    name = request.form.get('user_name')
+    password = request.form.get('password')
+    conn = sqlite3.connect('app.db')
+    c=conn.cursor()
+    c.execute("INSERT INTO user VALUES(null,?,?,0)",(name,password))
+    conn.commit()
+    c.close()
+    return redirect ('/comp')
+
+
+# login
+
+@app.route('/login')
+def login():
+  return render_template('login.html')
+
+@app.route('/login',methods=["POST"])   
+def login_post():
+  name =request.form.get('user_name')
+  password=request.form.get('password')
+  conn = sqlite3.connect('app.db')
+  c=conn.cursor()
+  c.execute("SELECT id FROM user WHERE user_name = ? AND password = ?",(name,password))
+  py_user_id=c.fetchone()
+  c.close()
+  if py_user_id is not None:
+      session["user_id"]=py_user_id
+      # /new_loginをtopに変える↓
+      return redirect('/new_login')
+  else:
+      return redirect('/login')
+
+
 if __name__ == "__main__":
     app.run()
