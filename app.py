@@ -302,8 +302,6 @@ def add_get():
         return redirect("/login")
 
 # task追加のpost通信
-
-
 @app.route("/addtask", methods=["POST"])
 def add_post():
     user_id = session["user_id"][0]
@@ -315,11 +313,9 @@ def add_post():
               (add_task, add_point,   user_id))
     conn.commit()
     c.close()
-    return redirect("/list")
+    return redirect("/tasklist")
 
 # uselistの作成
-
-
 @app.route("/uselist")
 def uselist():
     if "user_id" in session:
@@ -337,7 +333,7 @@ def uselist():
     else:
         return redirect("/login")
 
-# uselit追加のget通信
+# uselist追加のget通信
     @app.route("/adduselist")
     def add_get():
         if "user_id" in session:
@@ -353,15 +349,14 @@ def uselist():
         add_point = request.form.get("point")
         conn = sqlite3.connect("app.db")
         c = conn.cursor()
-        c.execute("INSERT INTO tasktable VALUES(null,?,?,?)",
-                  (add_item, add_point,   user_id))
+        c.execute("INSERT INTO tasktable VALUES(null,?,?,?)",(add_item, add_point,   user_id))
         conn.commit()
         c.close()
-        return redirect("/list")
+        return redirect("/uselist")
 
 
-# 編集機能の実装
-@app.route("/edit/<int:id>")
+# タスクリスト編集機能の実装
+@app.route("/edittask/<int:id>")
 def edit(id):
     if "user_id" in session:
         conn = sqlite3.connect("app.db")
@@ -379,35 +374,74 @@ def edit(id):
         return redirect("/login")
 
 # tasklist編集機能のpost通信
-
-
-@app.route("/edit", methods=["POST"])
+@app.route("/edittask",methods=["POST"])
 def edit_post():
-    item_id = request.form.get("")
-    item_id = int(item_id)
-    task = request.form.get("")
-    conn = sqlite3.connect("app.db")
-    c = conn.cursor()
-    c.execute("update task set task = ? where id = ?", (task, item_id))
-    conn.commit()
-    c.close()
-    return redirect("/list")
+	task = request.form.get("task")
+	point = request.form.get("point")
+	point = int(point) 
+	conn = sqlite3.connect("app.db")
+	c = conn.cursor()
+	c.execute("update tasktable set task, point = ? where id = ?",(task, point))
+	conn.commit()
+	c.close()
+	return redirect("/tasklist")
 
 # tasklistの削除機能の実装
-
-
-@app.route("/del/<int:id>")
+@app.route("/deltask/<int:id>")
 def task_del(id):
-    if "user_id" in session:
-        conn = sqlite3.connect("app.db")
-        c = conn.cursor()
-        c.execute("delete from tasktable where id = ?", (id,))
-        conn.commit()
-        c.close()
-        return redirect("/list")
-    else:
-        return redirect("/login")
+	if "user_id" in session:
+		conn = sqlite3.connect("app.db")
+		c = conn.cursor()
+		c.execute("delete from tasktable where id = ?", (id,))
+		conn.commit()
+		c.close()
+		return redirect ("/tasklist")
+	else:
+		return redirect("/login")
 
+# uselist編集機能の実装
+@app.route("/edititem/<int:id>")
+def edituselist(id):
+	if "user_id" in session:
+		conn = sqlite3.connect("app.db")
+		c = conn.cursor()
+		c.execute("select item, point from usertable where id = ?",(id,))
+		task = c.fetchone()
+		c.close
+		if task is not None:
+			task = task[0]
+		else:
+			return "タスクがありません"
+		item = {"id": id,"task":task}
+		return render_template("edit.html" , task = item)
+	else:
+		return redirect("/login")
+
+# uselist編集機能のpost通信
+@app.route("/edititem",methods=["POST"])
+def edituselist_post():
+    point = request.form.get("point")
+    point = int(point) 
+    item = request.form.get("item")
+    conn = sqlite3.connect("app.db")
+    c = conn.cursor()
+    c.execute("update user_table set item = ? ,point = ? where id = ?",(item, point))
+    conn.commit()
+    c.close()
+    return redirect("/uselist")
+
+# uselistの削除機能の実装
+@app.route("/delitem/<int:id>")
+def uselist_del(id):
+	if "user_id" in session:
+		conn = sqlite3.connect("app.db")
+		c = conn.cursor()
+		c.execute("delete from user_table where id = ?", (id,))
+		conn.commit()
+		c.close()
+		return redirect ("/uselist")
+	else:
+		return redirect("/login")
 
 @app.route('/comp')
 def comp_login():
