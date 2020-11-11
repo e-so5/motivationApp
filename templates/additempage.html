@@ -26,7 +26,7 @@
     <div id="addContentsWrapper">
       <header>
         <nav>
-          <div class="nav-wrapper cyan darken-1">
+          <div class="nav-wrapper light-blue accent-1">
             <a href="#" class="brand-logo center">編集</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
           </div>
@@ -35,34 +35,34 @@
 
       <div class="itemList container">
         <div id="itemList_text">
-          <p>項目とポイントを編集してください</p>
+          <p>やりたいことと<br />消費ポイントを入力してください</p>
 
           <!-- タスク入力フォーム -->
-          <form action="/edititem" method="POST">
-            <input type="hidden" value="{{task_id}}" name="task_id" />
+
+          <form action="/additem" method="post">
             <input
               type="text"
               id="itemList"
               name="item"
               size="15"
               maxlength="40"
-              value="{{user_item}}"
+              placeholder="項目を入力"
             />
             <input
               type="text"
-              id="addpoint"
+              id="addPoint"
               name="point"
               size="15"
               maxlength="40"
-              value="{{user_point}}"
+              placeholder="ポイントを入力"
             />
-            <!-- 編集ボタン -->
+            <!-- 登録ボタン -->
             <input
               type="submit"
               name="save"
               id="registerButton"
               class="waves-effect waves-light btn-large deep-orange lighten-4"
-              value="編集"
+              value="登録"
             />
           </form>
         </div>
@@ -71,8 +71,8 @@
       <!-- フッター -->
       <footer id="footer" class="teal lighten-4">
         <div id="footerContents">
-          <a href="/uselist">
-            <i class="white-text fas fa-step-backward" id="backButton"></i
+          <a href="/uselist"
+            ><i class="white-text fas fa-step-backward" id="backButton"></i
           ></a>
         </div>
       </footer>
