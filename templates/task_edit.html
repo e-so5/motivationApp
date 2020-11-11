@@ -26,7 +26,7 @@
     <div id="addContentsWrapper">
       <header>
         <nav>
-          <div class="nav-wrapper light-blue accent-1">
+          <div class="nav-wrapper cyan darken-1">
             <a href="#" class="brand-logo center">編集</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
           </div>
@@ -39,35 +39,41 @@
 
           <!-- タスク入力フォーム -->
           <form action="/edittask" method="POST">
+            <input type="hidden" value="{{task_id}}" name="task_id" />
             <input
-            type="text"
-            id="itemList"
-            name="in01"
+              type="text"
+              id="itemList"
+              name="task"
               size="15"
               maxlength="40"
-              placeholder="タスクを入力"
+              value="{{user_task}}"
             />
             <input
               type="text"
               id="addpoint"
-              name="in01"
+              name="point"
               size="15"
               maxlength="40"
-              placeholder="ポイントを入力"
+              value="{{user_point}}"
             />
-            <!-- 登録ボタン -->
-              <a
+            <!-- 編集ボタン -->
+            <input
+              type="submit"
+              name="save"
               id="registerButton"
               class="waves-effect waves-light btn-large deep-orange lighten-4"
-              >登録</a>
-            </form>
+              value="編集"
+            />
+          </form>
         </div>
       </div>
 
       <!-- フッター -->
       <footer id="footer" class="teal lighten-4">
         <div id="footerContents">
-          <i class="white-text fas fa-step-backward" id="backButton"></i>
+          <a href="/tasklist">
+            <i class="white-text fas fa-step-backward" id="backButton"></i
+          ></a>
         </div>
       </footer>
     </div>

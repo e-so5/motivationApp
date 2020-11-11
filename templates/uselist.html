@@ -1,52 +1,67 @@
 {% extends "base.html" %} {% block content %}
+
 <header>
   <nav>
-    <div class="nav-wrapper light-blue accent-1">
+    <div class="nav-wrapper cyan darken-1">
       <a href="#" class="brand-logo center">つかう</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
     </div>
   </nav>
 </header>
 
-<div class="main">
-  <table id="tasklist" class="striped">
-    <tbody>
-      <!-- for文 -->
-      { % for item in html_item_list% }
-      <tr>
-        <td class="list">{{ item["item] }}</td>
-        <td>{{ item["point"] + "point" }}</td>
-        <td>
-          <a href="/use_edit"><i class="fas fa-pen-square"></i></a>
-        </td>
-        <td><i class="far fa-trash-alt"></i></td>
-        <td>
-          <a
-            class="waves-effect waves-light btn #d7ccc8 brown lighten-4"
-            href=""
-            >使う</a
-          >
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+<div class="container">
+  <div class="main">
+    <table id="tasklist" class="striped">
+      <tbody>
+        <!-- for文 -->
+        {% for item in html_item_list %}
+        <tr id="border">
+          <td class="list">{{ item['item'] }}</td>
+          <td>{{ item['point']}}ポイント</td>
+          <td>
+            <a href="/edititem/{{item['id']}}"
+              ><i class="fas fa-pen-square"></i
+            ></a>
+          </td>
+          <td>
+            <a href="/delitem/{{item['id']}}"
+              ><i class="far fa-trash-alt"></i
+            ></a>
+          </td>
+          <td>
+            <form action="/use" method="POST">
+              <input type="hidden" value="{{item['id']}}" name="task_id" />
+              <input
+                type="submit"
+                name="save"
+                class="waves-effect waves-light btn #d7ccc8 brown lighten-4"
+                value="使う"
+              />
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<footer id="footertask" class="teal lighten-4">
-  <div id="addbutton" class="right-align">
-    <a
-      href="/adduselist"
-      class="waves-effect waves-light btn #80d8ff light-blue accent-1"
-      id="addtask"
-      >アイテムの追加</a
-    >
-  </div>
+<div id="adduselist" class="right-align">
+  <a
+    href="/additem"
+    class="waves-effect waves-light btn #80d8ff cyan darken-1"
+    id="addtask"
+    >アイテムの追加</a
+  >
+</div>
 
-  <div id="MyfooterContents">
-    <i class="white-text fas fa-plus-square"></i>
-    <i class="white-text fas fa-home"></i>
-    <i class="white-text fas fa-minus-square"></i>
+<!-- フッター -->
+<footer id="footer" class="teal lighten-4 clear">
+  <div id="footerContents" class="container">
+    <a href="/MyPage"
+      ><i class="white-text fas fa-step-backward" id="backButton"></i
+    ></a>
   </div>
 </footer>
+
 {% endblock %}
