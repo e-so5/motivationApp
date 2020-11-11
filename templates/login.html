@@ -6,45 +6,54 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <!-- <script type="text/javascript" src="login.js">
            </script> -->
-           <title>ログイン</title>
-           <link rel="STYLESHEET" href="../static/css/login.css" >
-       </head>
-       <!-- <body onload="fieldChanged();"> -->
-       <body>
-         <h1>ログイン</h1>
-           <hr>
-           <div align="center">
-              <table border="0">
-                  <form action="/login" method="POST">
-                      <tr>
-                          <th class="login_field">
-                              ユーザ名
-                            </th>
-                           
-                
-                          <td class="login_field">
-                              <input 
-                               style="padding: 12px;border-radius: 12px;" #00acc1  
-                               type="text" name="user_name" value="" size="24">
-                          </td> 
-                        </tr>
-                      <tr>
-                          <th class="login_field">
-                              パスワード
-                          </th>
-                          <td class="login_field">
-                              <input 
-                              style="padding: 12px;border-radius: 12px;" 
-                              type="password" name="password" value="" size="24" >
-                          </td>
-                      </tr>
-                      <tr>
-                          <td colspan="2" class="login_button">
-                              <input class="button2" type="submit" value="ログイン" name="save">
-                          </td>
-                      </tr>
-                  </form>
-              </table>
-          </div>
-      </body>
+    <title>ログイン</title>
+    <link rel="STYLESHEET" href="../static/css/login.css" />
+  </head>
+  <!-- <body onload="fieldChanged();"> -->
+  <body>
+    <h1>ログイン</h1>
+    <hr />
+    <div align="center">
+      <table border="0">
+        <form action="/login" method="POST">
+          <tr>
+            <th class="login_field">ユーザ名</th>
+
+            <td class="login_field">
+              <input
+                style="padding: 12px; border-radius: 12px"
+                #00acc1
+                type="text"
+                name="user_name"
+                value=""
+                size="24"
+              />
+            </td>
+          </tr>
+          <tr>
+            <th class="login_field">パスワード</th>
+            <td class="login_field">
+              <input
+                style="padding: 12px; border-radius: 12px"
+                type="password"
+                name="password"
+                value=""
+                size="24"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="login_button">
+              <input
+                class="button2"
+                type="submit"
+                value="ログイン"
+                name="save"
+              />
+            </td>
+          </tr>
+        </form>
+      </table>
+    </div>
+  </body>
 </html>
