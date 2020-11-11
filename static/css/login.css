@@ -1,9 +1,10 @@
-/* h1 {
+h1 {
     text-align: center;
     font-size: 32px;
     margin: 0px;
     padding: 0px;
     color: white;
+
     background-color: #00acc1;
 
 }
@@ -12,36 +13,40 @@ hr {
     margin-top: 0px;
     margin-bottom: 100px;
 
-} */
+}
+
+
 
 
 /* ログインページ */
-.login_title {
+th.login_field {
+    width: 250px;
     text-align: center;
+    padding: 8px;
     color: grey;
     margin-right: 0pt;
-    font-size: 16px;
-    margin-top: 48px;
+    font-size: 21px;
+
+
+
 }
 
-#login_field {
-    width: 360px;
-    padding: 8px;
-    border: 3px solid #d8d8d8;
-    border-radius: 24px;
+td.login_field {
+    padding: 24px;
+
+
 }
 
-.login_pass{
-    margin-top: 24px;
-}
-
-.login_button {
+td.login_button {
     text-align: center;
-    padding: 32px;
+    padding: 100px;
+
+
+
+
 }
 
-.button2 {
-    margin-top: 40px;
+input.button2 {
     font-size: 1.4em;
     font-weight: bold;
     padding: 10px 30px;

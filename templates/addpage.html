@@ -26,7 +26,7 @@
     <div id="addContentsWrapper">
       <header>
         <nav>
-          <div class="nav-wrapper cyan darken-1">
+          <div class="nav-wrapper light-blue accent-1">
             <a href="#" class="brand-logo center">ためる</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down"></ul>
           </div>
@@ -38,43 +38,38 @@
           <p>タスクとポイントを入力してください</p>
 
           <!-- タスク入力フォーム -->
-          <form action="/addtask" method="post">
-            <input
-              type="text"
-              id="itemList"
-              name="task"
-              size="15"
-              maxlength="40"
-              placeholder="タスクを入力"
-            />
-            <input
-              type="text"
-              id="addPoint"
-              name="point"
-              size="15"
-              maxlength="40"
-              placeholder="ポイントを入力"
-            />
-            <!-- 登録ボタン -->
-            <input
-              type="submit"
-              name="save"
-              id="registerButton"
-              class="waves-effect waves-light btn-large deep-orange lighten-4"
-              value="登録"
-            />
-          </form>
+          <input
+            type="text"
+            id="itemList"
+            name="in01"
+            size="15"
+            maxlength="40"
+            placeholder="タスクを入力"
+          />
+          <input
+            type="text"
+            id="addpoint"
+            name="in01"
+            size="15"
+            maxlength="40"
+            placeholder="ポイントを入力"
+          />
+          <!-- 登録ボタン -->
+          <a
+            id="registerButton"
+            class="waves-effect waves-light btn-large deep-orange lighten-4"
+            >登録</a
+          >
         </div>
       </div>
 
       <!-- フッター -->
       <footer id="footer" class="teal lighten-4">
         <div id="footerContents">
-          <a href="/MyPage"
-            ><i class="white-text fas fa-step-backward" id="backButton"></i
-          ></a>
+          <i class="white-text fas fa-step-backward" id="backButton"></i>
         </div>
       </footer>
+
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>

@@ -102,7 +102,7 @@
   <body>
     <header>
       <nav>
-        <div class="nav-wrapper cyan darken-1">
+        <div class="nav-wrapper light-blue accent-1">
           <a href="#" class="brand-logo center">マイページ</a>
         </div>
       </nav>
@@ -114,7 +114,7 @@
         <div id="UserInfo">
           <h3 id="userNameTitle">User Info</h3>
           <h2 id="userName">{{user_name}}さん</h2>
-          <h2 id="userLevel">LEVEL　{{user_level}}</h2>
+          <h2 id="userLevel">LEVEL　{{user_level[0]}}</h2>
         </div>
         <div id="userImage">
           <img id="Alice" class="korokoro" src="../static/img/alice2.png" />
@@ -133,22 +133,12 @@
       </div>
     </div>
 
-    <!-- ログアウトボタン -->
-    <div class="logOut">
-      <a
-        href="/logout"
-        id="logOutButton"
-        class="waves-effect waves-light btn-large deep-orange lighten-4"
-        >ログアウト</a
-      >
-    </div>
-
     <!-- フッター -->
     <footer id="footer" class="teal lighten-4">
       <div id="MyFooterContents">
         <a href="/tasklist"><i class="white-text fas fa-plus-square"></i></a>
         <a href="/"><i class="white-text fas fa-home"></i></a>
-        <a href="/uselist"><i class="white-text fas fa-minus-square"></i></a>
+        <a href="/use"><i class="white-text fas fa-minus-square"></i></a>
       </div>
     </footer>
 

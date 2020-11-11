@@ -17,37 +17,37 @@
     margin-top: 28px;
 }
 
-#addPoint{
-    margin-bottom: 24px;
-}
-
 #registerButton {
     margin: 20px auto;
     display: block;
     text-align: center;
     width: 200px;
     border-radius: 20px;
-    color: #FFF;
 }
 
 #footer {
     height: 50px;
 }
 
-#addButton, #adduselist{
-    right: 12px;
-    bottom: 64px;
-    position: fixed;
-    height: 36px;
-    background-color: #fff;
-    z-index: 999;    
+/* 貯めるページのフッター */
+#footertask{
+    height: 94px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 500;
 }
 
-#footerContents {
+#addbutton{
+    height: 36px;
+    background-color: #fff;
+    
+}
+
+#fotterContents {
     padding: 12px;
     float: left;
     margin-left: 24px;
-    padding: 12px;
 }
 
 #backButton {
@@ -105,6 +105,10 @@
     text-align: center;
 }
 
+.clear{
+    width: ;
+}
+
 .clear::after{
     content: "";
     clear: both;
@@ -117,12 +121,7 @@
     font-weight: bold;
 }
 
-.logOut{
-    text-align: center;
-    margin-top: 80px;
-}
-
-#MyFooterContents {
+#MyfooterContents {
     display: flex;
     justify-content: space-around;
     font-weight: bold;
@@ -162,19 +161,58 @@
     margin-top: 24px;
 }
 
-/* タスクリストページ */
+/* ここから要見直し
+body {
+    padding-top: 56px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+}
+
+main {
+    min-height: 100vh;
+    flex: 1 0 auto;
+    padding-bottom: 94px;
+}
+
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+}
+*/
+
+#tasklist{
+    
+}
+
 .list{
     width: 60%;
 }
 
-#border{
-    border-bottom: 1px solid #d7ccc8;
-}
-
-/* resultloseページ */
+/* resultloseのcss */
 #block{
     height: 300px;
 }
+
+
+
+
+/* footer{
+    z-index: 500;
+    width: 100%;
+    
+    
+    padding: 30px 0; 
+
+    position: absolute;/*←絶対位置*/
+    /* bottom: 0; 下に固定 */
+    /* left: 0;  */
 
 /* イベントページ */
 
@@ -399,11 +437,9 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
 body {
   background-color: #FDFAF5;
   margin-bottom: 50px;
-
 }
 html, button, input, select, textarea {
     font-family: 'Montserrat', Helvetica, sans-serif
@@ -412,18 +448,15 @@ h1 {
   text-align: center;
   margin: 30px 15px;
 }
-
 .zoom-area { 
   max-width: 490px;
   margin: 30px auto 30px;
   font-size: 19px;
   text-align: center;
 }
-
 .link-container {
   text-align: center;
 }
-
 a.more-link {
   text-transform: uppercase;
   font-size: 13px;
