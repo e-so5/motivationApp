@@ -10,7 +10,10 @@ app.secret_key = "panda"
 
 @app.route('/')
 def index():
-    return render_template('/TOP.html')
+    if 'user_id' in session:
+        return redirect("/MyPage")
+    else:
+        return render_template('/index.html')
 
 
 @app.route('/event', methods=['POST'])
@@ -234,16 +237,18 @@ def resultwin():
 
 @ app.route("/MyPage")
 def MyPage():
-    user_id = session['user_id']
+    user_id = session['user_id'][0]
     conn = sqlite3.connect('app.db')
     c = conn.cursor()
-    user_id = user_id[0]
+    print(user_id)
 
     c.execute("SELECT user_name, point, level FROM user where id = ?", (user_id,))
     user_info = c.fetchone()
     user_name = user_info[0]
     user_point = user_info[1]
     user_level = user_info[2]
+    print(user_id)
+    print(user_info)
 
     conn.commit()
     conn.close()
@@ -349,10 +354,13 @@ def uselist():
         item_list = []
         for row in c.fetchall():
             item_list.append({"id": row[0], "item": row[1], "point": row[2]})
+        c.execute(
+            "select point from user where id = ?", (py_user_id,))
+        user_point = c.fetchone()
         c.close()
         print(item_list)
 
-        return render_template("uselist.html", html_item_list=item_list)
+        return render_template("uselist.html", html_item_list=item_list, user_point=user_point)
     else:
         return redirect("/login")
 
@@ -503,6 +511,11 @@ def new_login_get():
     return render_template('new_login.html')
 
 
+@ app.route('/TOP')
+def TOP():
+    return render_template('TOP.html')
+
+
 @ app.route('/new_login', methods=["POST"])
 def new_login_post():
     name = request.form.get('user_name')
@@ -554,4 +567,4 @@ def task_edit():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

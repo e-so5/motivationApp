@@ -80,3 +80,19 @@ const grantAccess = () => {
 };
 
 
+// function DeleteCheck() {
+//   var res = confirm("削除します\nよろしいですか？");
+//   if (res == true) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+// // ポイント使用チェック用
+// function UseCheck() {
+//   var res = confirm("ポイントを使用します\nよろしいですか？");
+//   if (res == true) {
+//     return true;
+//   } else {
+//     return false;
+//   }
