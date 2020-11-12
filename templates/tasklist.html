@@ -17,14 +17,14 @@
         {% for item in html_task_list %}
         <tr id="border">
           <td class="list">{{ item['task'] }}</td>
-          <td>{{item['point']}}ポイント</td>
+          <td>{{item['point']}}p</td>
           <td>
             <a href="/edittask/{{item['id']}}"
               ><i class="fas fa-pen-square"></i
             ></a>
           </td>
           <td>
-            <a href="/deltask/{{item['id']}}"
+            <a onclick="return DeleteCheck()" href="/deltask/{{item['id']}}"
               ><i class="far fa-trash-alt"></i
             ></a>
           </td>
