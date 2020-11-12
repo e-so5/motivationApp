@@ -79,4 +79,13 @@ const grantAccess = () => {
   keyhole.removeEventListener("mouseover", grantAccess);
 };
 
-
+$(function(){
+  $('.jsalert').on('click', function(){
+    if($('.alert').val() === ''){
+      alert('項目を埋めてください');
+      $('.alert').focus();
+      return false;
+    }
+    alert('追加しました');
+  });
+});

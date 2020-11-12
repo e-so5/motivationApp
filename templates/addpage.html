@@ -42,25 +42,35 @@
             <input
               type="text"
               id="itemList"
+              class="alert"
               name="task"
               size="15"
               maxlength="40"
               placeholder="タスクを入力"
             />
             <input
-              type="text"
+              type="number"
               id="addPoint"
+              class="alert"
               name="point"
               size="15"
-              maxlength="40"
+              max="100"
+              min="1"
               placeholder="ポイントを入力"
             />
+            <!-- 機能追加未定 -->
+            <!-- <datalist id="data1">
+              <option value="10"></option>
+              <option value="20"></option>
+              <option value="40"></option>
+              <option value="80"></option>
+            </datalist> -->
             <!-- 登録ボタン -->
             <input
               type="submit"
               name="save"
               id="registerButton"
-              class="waves-effect waves-light btn-large deep-orange lighten-4"
+              class="jsalert waves-effect waves-light btn-large deep-orange lighten-4"
               value="登録"
             />
           </form>
