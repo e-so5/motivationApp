@@ -20,7 +20,14 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src="../static/js/footerFixed.js"></script>
-  </head>
+    <!-- <script type="javascript">
+      function alert()
+      {
+        txt = document.myform.task.value
+        if (txt == "") alert('入力してください');
+        
+    </script> -->
+  </head> 
 
   <body>
     <div id="addContentsWrapper">
@@ -38,13 +45,14 @@
           <p>タスクとポイントを入力してください</p>
 
           <!-- タスク入力フォーム -->
-          <form action="/addtask" method="post">
+          <form name = "myform" action="/addtask" method="post">
             <input
               type="text"
               id="itemList"
-              name="task"
+              name="task" 
               size="15"
               maxlength="40"
+              required="aiueo"
               placeholder="タスクを入力"
             />
             <input
@@ -53,11 +61,13 @@
               name="point"
               size="15"
               maxlength="40"
+              required
               placeholder="ポイントを入力"
             />
             <!-- 登録ボタン -->
             <input
               type="submit"
+             
               name="save"
               id="registerButton"
               class="waves-effect waves-light btn-large deep-orange lighten-4"
