@@ -6,7 +6,6 @@
     <title>SUPER BETTER</title>
     <meta
       name="description"
-      ｓ
       content="ゲーミフィケーションを利用してモチベーションを維持する新しいモチベーションアップアプリです。"
     />
     <link rel="icon" href="../static/img/favicon.png" />
@@ -21,8 +20,18 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript">
+      // 削除チェック用
+      function DeleteCheck() {
+        var res = confirm("削除します\nよろしいですか？");
+        if (res == true) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      // ポイント使用チェック用
       function UseCheck() {
-        var res = confirm("ポイントを使いますか？");
+        var res = confirm("ポイントを使用します\nよろしいですか？");
         if (res == true) {
           return true;
         } else {
@@ -30,16 +39,11 @@
         }
       }
     </script>
-    <script type="text/javascript" src="./footerFixed.js"></script>
-
+    <script type="text/javascript" src="../static/js/common.js"></script>
     <script type="text/javascript" src="../static/js/footerFixed.js"></script>
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/style.css') }}"
     />
   </head>
 
