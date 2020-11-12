@@ -79,13 +79,31 @@ const grantAccess = () => {
   keyhole.removeEventListener("mouseover", grantAccess);
 };
 
+// $(function(){
+//   $('.jsalert').on('click', function(){
+//     if($('.alert').val() === ''){
+//       alert('項目を埋めてください');
+//       // $('.alert').focus();
+//       return false;
+//     }
+//     alert('追加しました');
+//   });
+// });
+
 $(function(){
   $('.jsalert').on('click', function(){
-    if($('.alert').val() === ''){
-      alert('項目を埋めてください');
-      $('.alert').focus();
+    let isEmpty = false;
+    $('alert_task, alert_point').each(function(){
+      if($(this).val() === ''){
+        alert('必須項目が入力されていません！');
+        $(this).focus();
+        isEmpty = true;
+        return false;
+      }
+    });
+    if(isEmpty)
       return false;
-    }
-    alert('追加しました');
+    else
+      alert('送信完了！');
   });
 });
