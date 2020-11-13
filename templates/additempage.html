@@ -19,6 +19,17 @@
       src="https://kit.fontawesome.com/63c052cb4e.js"
       crossorigin="anonymous"
     ></script>
+<!--     <script type="text/javascript">
+      function check() {
+        text = document.newItem.item.value;
+        if (text == "") {
+          alert("入力されていません");
+          return false;
+        } else {
+          return true;
+        }
+      }
+    </script> -->
     <script type="text/javascript" src="../static/js/footerFixed.js"></script>
   </head>
 
@@ -39,7 +50,12 @@
 
           <!-- タスク入力フォーム -->
 
-          <form action="/additem" method="post">
+          <form
+            action="/additem"
+            method="post"
+            name="newItem"
+<!--             onsubmit="return check()" -->
+          >
             <input
               type="text"
               id="itemList"
@@ -49,11 +65,13 @@
               placeholder="項目を入力"
             />
             <input
-              type="text"
+              type="number"
               id="addPoint"
               name="point"
               size="15"
-              maxlength="40"
+              max="100"
+              min="1"
+              required
               placeholder="ポイントを入力"
             />
             <!-- 登録ボタン -->
@@ -61,6 +79,7 @@
               type="submit"
               name="save"
               id="registerButton"
+<!--               onClick="check()" -->
               class="waves-effect waves-light btn-large deep-orange lighten-4"
               value="登録"
             />

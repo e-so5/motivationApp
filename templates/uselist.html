@@ -11,20 +11,24 @@
 
 <div class="container">
   <div class="main">
+    <div class="currentPoint container">
+      <h5 class="currentPoint_txt">所持ポイント：{{user_point[0]}}ポイント</h5>
+    </div>
+
     <table id="tasklist" class="striped">
       <tbody>
         <!-- for文 -->
         {% for item in html_item_list %}
         <tr id="border">
           <td class="list">{{ item['item'] }}</td>
-          <td>{{ item['point']}}ポイント</td>
+          <td>{{ item['point']}}p</td>
           <td>
             <a href="/edititem/{{item['id']}}"
               ><i class="fas fa-pen-square"></i
             ></a>
           </td>
           <td>
-            <a href="/delitem/{{item['id']}}"
+            <a onclick="return DeleteCheck()" href="/delitem/{{item['id']}}"
               ><i class="far fa-trash-alt"></i
             ></a>
           </td>
@@ -36,6 +40,7 @@
                 name="save"
                 class="waves-effect waves-light btn #d7ccc8 brown lighten-4"
                 value="使う"
+                onclick="return UseCheck()"
               />
             </form>
           </td>
@@ -56,11 +61,11 @@
 </div>
 
 <!-- フッター -->
-<footer id="footer" class="teal lighten-4 clear">
-  <div id="footerContents" class="container">
-    <a href="/MyPage"
-      ><i class="white-text fas fa-step-backward" id="backButton"></i
-    ></a>
+<footer id="footer" class="teal lighten-4">
+  <div id="MyFooterContents">
+    <a href="/tasklist"><i class="white-text fas fa-plus-square"></i></a>
+    <a href="/"><i class="white-text fas fa-home"></i></a>
+    <a href="/uselist"><i class="white-text fas fa-minus-square"></i></a>
   </div>
 </footer>
 

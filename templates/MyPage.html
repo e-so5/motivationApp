@@ -99,7 +99,7 @@
     <script type="text/javascript" src="../static/js/footerFixed.js"></script>
   </head>
 
-  <body>
+  <body class="orange lighten-5">
     <header>
       <nav>
         <div class="nav-wrapper cyan darken-1">
@@ -109,38 +109,40 @@
     </header>
 
     <!-- ユーザー情報表示エリア -->
-    <div class="container">
-      <div id="user_info_wrapper" class="clear">
-        <div id="UserInfo">
-          <h3 id="userNameTitle">User Info</h3>
-          <h2 id="userName">{{user_name}}さん</h2>
-          <h2 id="userLevel">LEVEL　{{user_level}}</h2>
+    <div class="main_wrapper">
+      <div class="container">
+        <div id="user_info_wrapper" class="clear">
+          <div id="UserInfo">
+            <h3 id="userNameTitle">User Info</h3>
+            <h2 id="userName">{{user_name}}さん</h2>
+            <h2 id="userLevel">LEVEL　{{user_level}}</h2>
+          </div>
+          <div id="userImage">
+            <img id="Alice" class="korokoro" src="../static/img/alice2.png" />
+            <script>
+              loopAnimation("Alice", "korokoro", 800);
+            </script>
+          </div>
         </div>
-        <div id="userImage">
-          <img id="Alice" class="korokoro" src="../static/img/alice2.png" />
-          <script>
-            loopAnimation("Alice", "korokoro", 800);
-          </script>
+
+        <!-- ポイント表示エリア -->
+        <div class="PointStatus">
+          <div class="currentPoint">
+            <h3 class="PointInfo">所持ポイント</h3>
+            <h3 class="pointCount brown lighten-4">{{user_point}}ポイント</h3>
+          </div>
         </div>
       </div>
 
-      <!-- ポイント表示エリア -->
-      <div class="PointStatus">
-        <div class="currentPoint">
-          <h3 class="PointInfo">所持ポイント</h3>
-          <h3 class="pointCount brown lighten-4">{{user_point}}ポイント</h3>
-        </div>
+      <!-- ログアウトボタン -->
+      <div class="logOut">
+        <a
+          href="/logout"
+          id="logOutButton"
+          class="waves-effect waves-light btn-large deep-orange lighten-4"
+          >ログアウト</a
+        >
       </div>
-    </div>
-
-    <!-- ログアウトボタン -->
-    <div class="logOut">
-      <a
-        href="/logout"
-        id="logOutButton"
-        class="waves-effect waves-light btn-large deep-orange lighten-4"
-        >ログアウト</a
-      >
     </div>
 
     <!-- フッター -->
