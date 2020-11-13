@@ -27,10 +27,10 @@
     <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
   </head>
 
-  <body>
+  <body class="#ffccbc deep-orange lighten-4 center-align">
     <!-- ここからキリトリ -->
     <div class="#ffccbc deep-orange lighten-4 center-align">
-      <h1>結果発表</h1>
+      <h1 id ="resulth1">結果発表</h1>
       <img
         class="responsive-img"
         id="block"
@@ -42,17 +42,13 @@
       <h2>＋{{gotPoint}}ポイント</h2>
     </div>
 
-    <footer class="page-footer #b2dfdb teal lighten-4">
-      <div class="container">
-        <div class="center-align">
-          <!-- <form action="/pointDouble" method="get" name="double"> -->
-          <a href="/pointDouble"><i class="medium material-icons">home</i></a>
-          <!-- </form> -->
-        </div>
+    <footer id="footer" class="teal lighten-4 clear">
+      <div id="footerContents">
+        <a href="pointNorml"
+          ><i class="white-text fas fa-step-backward" id="backButton"></i
+        ></a>
       </div>
     </footer>
-
-    <footer></footer>
 
     <!-- Compiled and minified CSS -->
     <link
