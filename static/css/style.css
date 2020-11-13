@@ -1,4 +1,10 @@
 
+.clear::after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
 /* ためるページ */
 
 #addContentsWrapper {
@@ -75,14 +81,36 @@
 
 #About_add {
     padding-top: 40px;
+    text-align: center;
+}
+
+.about_txt{
+    margin-bottom: 24px;
+}
+
+#About_add video{
+    width: 560px;
+}
+
+@media screen and (max-width: 767px){
+    #About_add video{
+        width: 320px;
+        margin-top: 40px;
+    }  
 }
 
 #About_save {
-    padding-top: 160px;
+    padding-top: 140px;
 }
 
 #AboutButton {
-    margin-top: 140px;
+    margin-top: 40px;
+}
+
+@media screen and (max-width: 767px){
+    #AboutButton {
+        margin-top: 140px;
+    }
 }
 
 #LoginButton{
@@ -115,12 +143,6 @@
     width: 50%;
     float: right;
     text-align: center;
-}
-
-.clear::after{
-    content: "";
-    clear: both;
-    display: block;
 }
 
 #UserInfo>h2 {
